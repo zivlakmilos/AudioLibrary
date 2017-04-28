@@ -1,0 +1,9 @@
+# Binary
+build/
+
+# KDevelop
+*.kdev4
+.kdev4/
+
+# Dia backup
+*.dia~
