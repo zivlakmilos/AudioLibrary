@@ -3,15 +3,11 @@
 
 #include <cstddef>
 
-class IAudioTrack
+class IAudioSample
 {
 public:
     virtual ~IAudioTrack(void) {};
 
-    virtual bool play(void) = 0;
-    virtual bool pause(void) = 0;
-    virtual bool stop(void) = 0;
-    virtual bool seek(float pos) = 0;
     virtual void streamData(float *stream, size_t length) = 0;
 };
 

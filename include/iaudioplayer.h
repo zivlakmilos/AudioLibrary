@@ -1,21 +1,19 @@
 #ifndef _I_AUDIO_PLAYER_H_
 #define _I_AUDIO_PLAYER_H_
 
-#include "iaudiotrack.h"
+#include "iaudiosample.h"
 
 class IAudioPlayer
 {
 public:
-    IAudioPlayer(IAudioDevice &audioDevice) {};
     virtual ~IAudioPlayer(void) {};
 
-    virtual void addTrack(IAudioTrack &track) = 0;
-    virtual bool removeTrack(IAudioTrack &track) = 0;
-    virtual bool playTrack(IAudioTrack &track) = 0;
-    virtual bool pauseTrack(IAudioTrack &track) = 0;
-    virtual bool stopTrack(IAudioTrack &track) = 0;
-    virtual bool seekTrack(IAudioTrack &track, float pos) = 0;
+    virtual bool playSample(IAudioSample &sample) = 0;
+    virtual bool pauseSample(IAudioSample &sample) = 0;
+    virtual bool stopSample(IAudioSample &sample) = 0;
+    virtual bool seekSample(IAudioSample &sample, float pos) = 0;
     virtual void stopAll(void) = 0;
+    virtual void stream(float *stream, size_t length);
 };
 
 #endif // _I_AUDIO_PLAYER_H_
