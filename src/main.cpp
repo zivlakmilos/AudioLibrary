@@ -4,19 +4,15 @@
 #include "exception.h"
 #include "sdl/audioplayersdl.h"
 #include "sdl/audiosamplesdl.h"
+#include "sdl/audioloadersdl.h"
 
 #include <SDL2/SDL.h>
 
 int main(int argc, char *argv[])
 {
     AudioPlayerSDL player;
-    std::shared_ptr<AudioSampleSDL> sample(new AudioSampleSDL);
+    std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/audiocpp/res/sample.wav");
 
-    std::vector<float> test;
-    for(int i = 0; i < 100000; i++)
-        test.push_back(std::sin(i));
-
-    sample->setData(test);
     player.play(sample);
 
     std::cout << "Hello World!" << std::endl;
