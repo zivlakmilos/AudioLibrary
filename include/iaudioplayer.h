@@ -1,6 +1,8 @@
 #ifndef _I_AUDIO_PLAYER_H_
 #define _I_AUDIO_PLAYER_H_
 
+#include <memory>
+
 #include "iaudiosample.h"
 
 class IAudioPlayer
@@ -8,12 +10,12 @@ class IAudioPlayer
 public:
     virtual ~IAudioPlayer(void) {};
 
-    virtual bool playSample(IAudioSample &sample) = 0;
-    virtual bool pauseSample(IAudioSample &sample) = 0;
-    virtual bool stopSample(IAudioSample &sample) = 0;
-    virtual bool seekSample(IAudioSample &sample, float pos) = 0;
-    virtual void stopAll(void) = 0;
-    virtual void stream(float *stream, size_t length);
+    virtual bool play(const std::shared_ptr<IAudioSample> &sample) = 0;
+    virtual bool play(void) = 0;
+    virtual bool pause(void) = 0;
+    virtual bool stop(void) = 0;
+    virtual bool seek(float pos) = 0;
+    virtual void stream(float *stream, size_t length) = 0;
 };
 
 #endif // _I_AUDIO_PLAYER_H_

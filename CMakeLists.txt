@@ -15,6 +15,8 @@ include_directories(
 )
 
 set(SOURCES
+    src/sdl/audioplayersdl.cpp
+    src/sdl/audiosamplesdl.cpp
 )
 
 set(LIBRARIES
