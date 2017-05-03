@@ -92,5 +92,14 @@ void AudioPlayerSDL::stream(float *stream, size_t length)
     if(!m_sample || m_audioDevice == 0)
         return;
     if(!m_sample->stream(stream, length))
+    {
         stop();
+        if(m_onSampleEndListener)
+            m_onSampleEndListener();
+    }
+}
+
+void AudioPlayerSDL::setOnSampleEndListener(std::function<void(void)> onSampleEndListener)
+{
+    m_onSampleEndListener = onSampleEndListener;
 }

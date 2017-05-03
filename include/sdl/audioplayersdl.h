@@ -20,10 +20,14 @@ public:
     virtual bool seek(float pos) override;
     virtual void stream(float *stream, size_t length) override;
 
+    virtual void setOnSampleEndListener(std::function<void(void)> onSampleEndListener) override;
+
 private:
     SDL_AudioDeviceID m_audioDevice;
 
     std::shared_ptr<IAudioSample> m_sample;
+
+    std::function<void(void)> m_onSampleEndListener;
 };
 
 #endif // _AUDIO_PLAYER_SDL_H_

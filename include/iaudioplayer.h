@@ -2,6 +2,7 @@
 #define _I_AUDIO_PLAYER_H_
 
 #include <memory>
+#include <functional>
 
 #include "iaudiosample.h"
 
@@ -16,6 +17,8 @@ public:
     virtual bool stop(void) = 0;
     virtual bool seek(float pos) = 0;
     virtual void stream(float *stream, size_t length) = 0;
+
+    virtual void setOnSampleEndListener(std::function<void(void)> onSampleEndListener) = 0;
 };
 
 #endif // _I_AUDIO_PLAYER_H_

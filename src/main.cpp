@@ -15,15 +15,20 @@ int main(int argc, char *argv[])
     std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/a_far_lamore_comincia_tu.wav");
 
     player.play(sample);
-    player.seek(0.2f);
+    //player.seek(0.2f);
+    player.seek(0.9f);
 
     std::cout << "Hello World!" << std::endl;
 
-    char ch;
-    do
+    bool playing = true;
+    player.setOnSampleEndListener([&playing](void) {
+            playing = false;
+        });
+
+    while(playing)
     {
-        std::cin >> ch;
-    } while(ch != '\n');
+        SDL_Delay(100);
+    }
 
     return 0;
 }
