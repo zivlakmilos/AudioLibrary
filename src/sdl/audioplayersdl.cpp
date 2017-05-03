@@ -74,7 +74,7 @@ bool AudioPlayerSDL::pause(void)
 
 bool AudioPlayerSDL::stop(void)
 {
-    SDL_PauseAudioDevice(m_audioDevice, 0);
+    SDL_PauseAudioDevice(m_audioDevice, 1);
     seek(0.0f);
     return true;
 }
