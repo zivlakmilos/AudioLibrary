@@ -2,15 +2,17 @@
 
 #include <cstdint>
 
-AudioSampleSDL::AudioSampleSDL(void)
-    : IAudioSample()
+AudioSampleSDL::AudioSampleSDL(const SampleInfo &sampleInfo)
+    : IAudioSample(),
+      m_sampleInfo(sampleInfo)
 {
 }
 
-AudioSampleSDL::AudioSampleSDL(const std::vector<float> &data)
+AudioSampleSDL::AudioSampleSDL(const std::vector<float> &data, const SampleInfo &sampleInfo)
     : IAudioSample(),
       m_data(data),
-      m_pos(0)
+      m_pos(0),
+      m_sampleInfo(sampleInfo)
 {
 }
 

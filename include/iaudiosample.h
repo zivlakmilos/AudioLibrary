@@ -3,6 +3,8 @@
 
 #include <cstddef>
 
+#include "sampleinfo.h"
+
 class IAudioSample
 {
 public:
@@ -10,6 +12,8 @@ public:
 
     virtual void seek(float pos) = 0;
     virtual bool stream(float *stream, size_t length) = 0;
+
+    virtual SampleInfo getSampleInfo(void) = 0;
 };
 
 #endif // _I_AUDIO_TRACK_H_

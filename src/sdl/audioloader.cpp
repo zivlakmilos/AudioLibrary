@@ -23,5 +23,9 @@ std::shared_ptr<IAudioSample> AudioLoaderSDL::loadWav(const std::string &filePat
 
     SDL_FreeWAV(buffer);
 
-    return std::shared_ptr<IAudioSample>(new AudioSampleSDL(data));
+    SampleInfo sampleInfo;
+    sampleInfo.freq = spec.freq;
+    sampleInfo.channels = spec.channels;
+
+    return std::shared_ptr<IAudioSample>(new AudioSampleSDL(data, sampleInfo));
 }

@@ -11,12 +11,18 @@
 int main(int argc, char *argv[])
 {
     AudioPlayerSDL player;
-    std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/audiocpp/res/sample.wav");
+    //std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/audiocpp/res/sample.wav");
+    std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/a_far_lamore_comincia_tu.wav");
 
     player.play(sample);
 
     std::cout << "Hello World!" << std::endl;
-    SDL_Delay(3000);
+
+    char ch;
+    do
+    {
+        std::cin >> ch;
+    } while(ch != '\n');
 
     return 0;
 }
