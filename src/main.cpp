@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
     player.setOnSampleEndListener([&](void) {
             playing = false;
         });
+    player.setOnUpdateListener([](const float *data, size_t length) {
+        });
 
     while(playing)
     {

@@ -21,6 +21,7 @@ public:
     virtual void stream(float *stream, size_t length) override;
 
     virtual void setOnSampleEndListener(std::function<void(void)> onSampleEndListener) override;
+    virtual void setOnUpdateListener(std::function<void(const float*, size_t)> onUpdateListener) override;
 
 private:
     SDL_AudioDeviceID m_audioDevice;
@@ -29,6 +30,7 @@ private:
     bool m_loop;
 
     std::function<void(void)> m_onSampleEndListener;
+    std::function<void(const float*, size_t)> m_onUpdateListener;
 };
 
 #endif // _AUDIO_PLAYER_SDL_H_

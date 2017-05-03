@@ -103,9 +103,17 @@ void AudioPlayerSDL::stream(float *stream, size_t length)
         if(m_loop)
             play(true);
     }
+
+    if(m_onUpdateListener)
+        m_onUpdateListener(stream, length);
 }
 
 void AudioPlayerSDL::setOnSampleEndListener(std::function<void(void)> onSampleEndListener)
 {
     m_onSampleEndListener = onSampleEndListener;
+}
+
+void AudioPlayerSDL::setOnUpdateListener(std::function<void(const float*, size_t)> onUpdateListener)
+{
+    m_onUpdateListener = onUpdateListener;
 }
