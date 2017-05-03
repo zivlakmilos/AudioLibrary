@@ -26,4 +26,10 @@ set(LIBRARIES
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
+#add_library(${PROJECT_NAME} SHARED ${SOURCES} src/main.cpp)
+#add_library(${PROJECT_NAME}_static STATIC ${SOURCES} src/main.cpp)
+
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
+
+#install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+#install(DIRECTORY include/ DESTINATION include/zaudio)
