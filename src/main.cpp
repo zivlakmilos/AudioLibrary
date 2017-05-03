@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/a_far_lamore_comincia_tu.wav");
 
     player.play(sample);
+    player.seek(0.2f);
 
     std::cout << "Hello World!" << std::endl;
 

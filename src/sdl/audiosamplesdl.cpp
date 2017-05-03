@@ -29,6 +29,7 @@ AudioSampleSDL::~AudioSampleSDL(void)
 
 void AudioSampleSDL::seek(float pos)
 {
+    m_pos = pos * m_data.size();
 }
 
 bool AudioSampleSDL::stream(float *stream, size_t length)
