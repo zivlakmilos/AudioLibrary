@@ -13,8 +13,8 @@ public:
     AudioPlayerSDL(void);
     virtual ~AudioPlayerSDL(void);
 
-    virtual bool play(const std::shared_ptr<IAudioSample> &audioSample) override;
-    virtual bool play(void);
+    virtual bool play(const std::shared_ptr<IAudioSample> &audioSample, bool loop = false) override;
+    virtual bool play(bool loop = false) override;
     virtual bool pause(void) override;
     virtual bool stop(void) override;
     virtual bool seek(float pos) override;
@@ -26,6 +26,7 @@ private:
     SDL_AudioDeviceID m_audioDevice;
 
     std::shared_ptr<IAudioSample> m_sample;
+    bool m_loop;
 
     std::function<void(void)> m_onSampleEndListener;
 };

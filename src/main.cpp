@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     std::cout << "Hello World!" << std::endl;
 
     bool playing = true;
-    player.setOnSampleEndListener([&playing](void) {
+    player.setOnSampleEndListener([&](void) {
             playing = false;
         });
 

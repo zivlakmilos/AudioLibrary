@@ -23,7 +23,8 @@ static void _stream(void *userdata, uint8_t *stream, int length)
 
 AudioPlayerSDL::AudioPlayerSDL(void)
     : IAudioPlayer(),
-      m_audioDevice(0)
+      m_audioDevice(0),
+      m_loop(false)
 {
     SDL_Init(SDL_INIT_AUDIO);
 }
@@ -34,7 +35,7 @@ AudioPlayerSDL::~AudioPlayerSDL(void)
         SDL_CloseAudioDevice(m_audioDevice);
 }
 
-bool AudioPlayerSDL::play(const std::shared_ptr<IAudioSample> &audioSample)
+bool AudioPlayerSDL::play(const std::shared_ptr<IAudioSample> &audioSample, bool loop)
 {
     if(m_audioDevice != 0)
         SDL_CloseAudioDevice(m_audioDevice);
@@ -55,14 +56,17 @@ bool AudioPlayerSDL::play(const std::shared_ptr<IAudioSample> &audioSample)
     m_sample = audioSample;
     seek(0.0f);
     SDL_PauseAudioDevice(m_audioDevice, 0);
+    m_loop = loop;
+
     return true;
 }
 
-bool AudioPlayerSDL::play(void)
+bool AudioPlayerSDL::play(bool loop)
 {
     if(!m_sample || m_audioDevice == 0)
         return false;
     SDL_PauseAudioDevice(m_audioDevice, 0);
+    m_loop = loop;
     return true;
 }
 
@@ -96,6 +100,8 @@ void AudioPlayerSDL::stream(float *stream, size_t length)
         stop();
         if(m_onSampleEndListener)
             m_onSampleEndListener();
+        if(m_loop)
+            play(true);
     }
 }
 

@@ -11,8 +11,8 @@ class IAudioPlayer
 public:
     virtual ~IAudioPlayer(void) {};
 
-    virtual bool play(const std::shared_ptr<IAudioSample> &sample) = 0;
-    virtual bool play(void) = 0;
+    virtual bool play(const std::shared_ptr<IAudioSample> &sample, bool loop = false) = 0;
+    virtual bool play(bool loop = false) = 0;
     virtual bool pause(void) = 0;
     virtual bool stop(void) = 0;
     virtual bool seek(float pos) = 0;
