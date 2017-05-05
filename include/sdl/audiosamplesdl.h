@@ -21,8 +21,8 @@ public:
 
     virtual SampleInfo getSampleInfo(void) { return m_sampleInfo; };
 
-    inline std::vector<float> getData(void) { return m_data; };
-    inline void setData(const std::vector<float> &data) { m_data = data; };
+    inline std::vector<float> getData(void) { return m_data; } override;
+    inline void setData(const std::vector<float> &data) { m_data = data; } override;
 
     AudioSampleSDL &operator=(const AudioSampleSDL &rhs);
 
