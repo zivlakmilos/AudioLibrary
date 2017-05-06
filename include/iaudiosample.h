@@ -2,6 +2,7 @@
 #define _I_AUDIO_TRACK_H_
 
 #include <cstddef>
+#include <vector>
 
 #include "sampleinfo.h"
 

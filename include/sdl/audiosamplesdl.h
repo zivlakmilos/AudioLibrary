@@ -19,10 +19,10 @@ public:
     virtual void seek(float pos);
     virtual bool stream(float *stream, size_t length) override;
 
-    virtual SampleInfo getSampleInfo(void) { return m_sampleInfo; };
+    virtual SampleInfo getSampleInfo(void) override { return m_sampleInfo; };
 
-    inline std::vector<float> getData(void) { return m_data; } override;
-    inline void setData(const std::vector<float> &data) { m_data = data; } override;
+    virtual std::vector<float> getData(void) override { return m_data; };
+    virtual void setData(const std::vector<float> &data) override { m_data = data; };
 
     AudioSampleSDL &operator=(const AudioSampleSDL &rhs);
 
