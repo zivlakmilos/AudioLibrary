@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cmath>
 
-#include "exception.h"
-#include "sdl/audioplayersdl.h"
-#include "sdl/audiosamplesdl.h"
-#include "sdl/audioloadersdl.h"
+#include <zaudio/exception.h>
+#include <zaudio/sdl/audioplayersdl.h>
+#include <zaudio/sdl/audiosamplesdl.h>
+#include <zaudio/sdl/audioloadersdl.h>
 
 #include <SDL2/SDL.h>
 

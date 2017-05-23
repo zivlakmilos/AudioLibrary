@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.11)
-project(AudioLibrary)
+project(zaudio)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
@@ -25,11 +25,11 @@ set(LIBRARIES
     ${SDL2MIXER_LIBRARIES}
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
-#add_library(${PROJECT_NAME} SHARED ${SOURCES}) 
-#add_library(${PROJECT_NAME}_static STATIC ${SOURCES})
+#add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
+add_library(${PROJECT_NAME} SHARED ${SOURCES}) 
+add_library(${PROJECT_NAME}_static STATIC ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
 
-#install(TARGETS ${PROJECT_NAME} DESTINATION lib)
-#install(DIRECTORY include/ DESTINATION include/zaudio)
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+install(DIRECTORY include/ DESTINATION include)

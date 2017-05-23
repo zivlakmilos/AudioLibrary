@@ -1,4 +1,4 @@
-#include "sdl/audiosamplesdl.h"
+#include <zaudio/sdl/audiosamplesdl.h>
 
 #include <cstdint>
 

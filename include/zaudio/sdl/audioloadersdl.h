@@ -4,7 +4,7 @@
 #include <string>
 #include <memory>
 
-#include "audiosamplesdl.h"
+#include <zaudio/sdl/audiosamplesdl.h>
 
 class AudioLoaderSDL
 {

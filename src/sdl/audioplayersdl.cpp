@@ -1,9 +1,9 @@
-#include "sdl/audioplayersdl.h"
+#include <zaudio/sdl/audioplayersdl.h>
 
 #include <SDL2/SDL.h>
 
-#include "exception.h"
-#include "sdl/audiosamplesdl.h"
+#include <zaudio/exception.h>
+#include <zaudio/sdl/audiosamplesdl.h>
 
 static void _stream(void *userdata, uint8_t *stream, int length)
 {

@@ -1,12 +1,12 @@
 #ifndef _AUDIO_SAMPLE_SDL_H_
 #define _AUDIO_SAMPLE_SDL_H_
 
-#include "iaudiosample.h"
+#include <zaudio/iaudiosample.h>
 
 #include <cstdint>
 #include <vector>
 
-#include "sampleinfo.h"
+#include <zaudio/sampleinfo.h>
 
 class AudioSampleSDL : public IAudioSample
 {

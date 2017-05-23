@@ -1,8 +1,8 @@
-#include "sdl/audioloadersdl.h"
+#include <zaudio/sdl/audioloadersdl.h>
 
 #include <SDL2/SDL.h>
 
-#include "exception.h"
+#include <zaudio/exception.h>
 
 std::shared_ptr<IAudioSample> AudioLoaderSDL::loadWav(const std::string &filePath)
 {

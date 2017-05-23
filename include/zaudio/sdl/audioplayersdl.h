@@ -1,7 +1,7 @@
 #ifndef _AUDIO_PLAYER_SDL_H_
 #define _AUDIO_PLAYER_SDL_H_
 
-#include "iaudioplayer.h"
+#include <zaudio/iaudioplayer.h>
 
 #include <vector>
 #include <memory>
