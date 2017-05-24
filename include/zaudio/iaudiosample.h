@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <vector>
 
-#include "sampleinfo.h"
+#include <zaudio/sampleinfo.h>
 
 class IAudioSample
 {

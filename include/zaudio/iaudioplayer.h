@@ -4,7 +4,7 @@
 #include <memory>
 #include <functional>
 
-#include "iaudiosample.h"
+#include <zaudio/iaudiosample.h>
 
 class IAudioPlayer
 {
