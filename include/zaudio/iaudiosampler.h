@@ -1,12 +1,12 @@
-#ifndef _I_SAMPLER_H_
-#define _I_SAMPLER_H_
+#ifndef _I_AUDIO_SAMPLER_H_
+#define _I_AUDIO_SAMPLER_H_
 
 #include <zaudio/iaudiosample.h>
 
-class ISampler
+class IAudioSampler
 {
 public:
-    virtual ~ISampler(void) {}
+    virtual ~IAudioSampler(void) {}
 
     virtual bool play(const IAudioSample &sample) = 0;
     virtual bool stop(void) = 0;
@@ -14,4 +14,4 @@ public:
     virtual void setUpdateListener(void) = 0;
 };
 
-#endif // _I_SAMPLER_H_
+#endif // _I_AUDIO_SAMPLER_H_
