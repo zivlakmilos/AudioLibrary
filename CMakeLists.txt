@@ -16,6 +16,7 @@ include_directories(
 
 set(SOURCES
     src/sdl/audioplayersdl.cpp
+    src/sdl/audiosamplersdl.cpp
     src/sdl/audiosamplesdl.cpp
     src/sdl/audioloader.cpp
 )
@@ -25,11 +26,11 @@ set(LIBRARIES
     ${SDL2MIXER_LIBRARIES}
 )
 
-#add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
-add_library(${PROJECT_NAME} SHARED ${SOURCES}) 
-add_library(${PROJECT_NAME}_static STATIC ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} src/main.cpp)
+#add_library(${PROJECT_NAME} SHARED ${SOURCES}) 
+#add_library(${PROJECT_NAME}_static STATIC ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
 
-install(TARGETS ${PROJECT_NAME} DESTINATION lib)
-install(DIRECTORY include/ DESTINATION include)
+#install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+#install(DIRECTORY include/ DESTINATION include)

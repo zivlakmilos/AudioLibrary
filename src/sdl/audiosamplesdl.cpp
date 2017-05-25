@@ -32,18 +32,15 @@ void AudioSampleSDL::seek(float pos)
     m_pos = pos * m_data.size();
 }
 
-bool AudioSampleSDL::stream(float *stream, size_t length)
+size_t AudioSampleSDL::stream(float *stream, size_t length)
 {
-    if(m_pos >= m_data.size())
-        return false;
-
     length = (m_data.size() - m_pos < length) ? m_data.size() - m_pos : length;
 
     for(int i = 0; i < length; i++)
         stream[i] = m_data[m_pos + i];
     m_pos += length;
 
-    return true;
+    return length;
 }
 
 AudioSampleSDL &AudioSampleSDL::operator=(const AudioSampleSDL &rhs)

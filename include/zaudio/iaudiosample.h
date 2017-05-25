@@ -12,7 +12,7 @@ public:
     virtual ~IAudioSample(void) {};
 
     virtual void seek(float pos) = 0;
-    virtual bool stream(float *stream, size_t length) = 0;
+    virtual size_t stream(float *stream, size_t length) = 0;
 
     virtual SampleInfo getSampleInfo(void) = 0;
 

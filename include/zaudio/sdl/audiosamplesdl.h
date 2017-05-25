@@ -16,8 +16,8 @@ public:
     AudioSampleSDL(const AudioSampleSDL &other);
     virtual ~AudioSampleSDL(void);
 
-    virtual void seek(float pos);
-    virtual bool stream(float *stream, size_t length) override;
+    virtual void seek(float pos) override;
+    virtual size_t stream(float *stream, size_t length) override;
 
     virtual SampleInfo getSampleInfo(void) override { return m_sampleInfo; };
 
