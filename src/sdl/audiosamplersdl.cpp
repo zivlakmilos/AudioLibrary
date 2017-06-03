@@ -51,7 +51,17 @@ bool AudioSamplerSDL::play(const std::shared_ptr<IAudioSample> &sample)
             return false;
     }
 
-    m_samples.push_back(sample);
+    bool exists = false;
+    for(auto sample : m_samples)
+    {
+        if(sample == sample)
+        {
+            sample->seek(0.0f);
+            exists = true;
+        }
+    }
+    if(!exists)
+        m_samples.push_back(sample);
     SDL_PauseAudioDevice(m_audioDevice, 0);
 
     return true;
@@ -87,7 +97,7 @@ void AudioSamplerSDL::stream(float *sample, size_t lenght)
             sample[i] += tmpSamples[i];
 
         if(lenght2 < lenght)
-            m_samples.erase(it);
+            m_samples.erase(it--);
     }
 
     for(int i = 0; i < lenght; i++)

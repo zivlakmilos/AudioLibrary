@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
 
     sampler.play(piano1);
     sampler.play(piano2);
+    SDL_Delay(100);
+    sampler.play(piano1);
     SDL_Delay(3000);
 
     return 0;
