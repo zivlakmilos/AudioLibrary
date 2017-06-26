@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     //std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/audiocpp/res/sample.wav");
     std::shared_ptr<IAudioSample> sample = AudioLoaderSDL::loadWav("/home/zi/a_far_lamore_comincia_tu.wav");
 
-    std::shared_ptr<IAudioSample> piano1 = AudioLoaderSDL::loadWav("/home/zi/samples/Alesis-Fusion-Bright-Acoustic-Piano-C4.wav");
-    std::shared_ptr<IAudioSample> piano2 = AudioLoaderSDL::loadWav("/home/zi/samples/Alesis-Fusion-Bright-Acoustic-Piano-C2.wav");
+    std::shared_ptr<IAudioSample> piano1 = AudioLoaderSDL::loadWav("/home/zi/wav-piano-sound/wav/c1.wav");
+    std::shared_ptr<IAudioSample> piano2 = AudioLoaderSDL::loadWav("/home/zi/wav-piano-sound/wav/c2.wav");
 
     /*
     player.play(sample);

@@ -14,6 +14,7 @@ public:
     virtual bool play(const std::shared_ptr<IAudioSample> &sample) = 0;
     virtual bool stop(void) = 0;
     virtual void stream(float *sample, size_t lenght) = 0;
+    virtual void setOnAllSamplesEndListener(std::function<void(void)> onAllSamplesEndListener) = 0;
     virtual void setUpdateListener(std::function<void(float*, size_t)> updateListener) = 0;
 };
 

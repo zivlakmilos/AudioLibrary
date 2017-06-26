@@ -80,6 +80,8 @@ void AudioSamplerSDL::stream(float *sample, size_t lenght)
     if(m_samples.empty())
     {
         stop();
+        if(m_onAllSamplesEndListener)
+            m_onAllSamplesEndListener();
         return;
     }
 
@@ -102,6 +104,11 @@ void AudioSamplerSDL::stream(float *sample, size_t lenght)
 
     for(int i = 0; i < lenght; i++)
         sample[i] /= (float)count;
+}
+
+void AudioSamplerSDL::setOnAllSamplesEndListener(std::function<void(void)> onAllSamplesEndListener)
+{
+    m_onAllSamplesEndListener = onAllSamplesEndListener;
 }
 
 void AudioSamplerSDL::setUpdateListener(std::function<void(float *data, size_t)> updateListener)
