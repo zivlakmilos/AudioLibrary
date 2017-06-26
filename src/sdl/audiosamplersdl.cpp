@@ -51,14 +51,13 @@ bool AudioSamplerSDL::play(const std::shared_ptr<IAudioSample> &sample)
             return false;
     }
 
+    sample->seek(0.0f);
+
     bool exists = false;
     for(auto sample : m_samples)
     {
         if(sample == sample)
-        {
-            sample->seek(0.0f);
             exists = true;
-        }
     }
     if(!exists)
         m_samples.push_back(sample);
